@@ -9,10 +9,22 @@ A minimal GitHub profile explorer centered around **my GitHub account** – show
 |----------------|---------------------------|
 | **UI**         | React + Emotion (CSS-in-JS) |
 | **Routing**    | React Router v7           |
+| **Toast**      | Sonner                    |
+| **PreFetching**      | Debounce and prefetchQuery(tanstack query)                    |
 | **Data Fetching** | TanStack Query (React Query) |
 | **State Management** | Redux Toolkit + Redux Saga |
 | **Markdown Rendering** | React Markdown |
 | **Dev Tools**  | Vite, TypeScript          |
+
+
+**Backend** : To support persistence, personalization, and authenticated access, the app includes a backend powered by **Node.js**, **Express**, and **Supabase**.
+
+| Layer            | Stack / Service              |
+|------------------|------------------------------|
+| **Backend Server** | Node.js + Express            |
+| **Database**      | Supabase (PostgreSQL + Auth) |
+| **Data Access**   | Supabase SDK + SQL queries   |
+| **Deployment**    | Render     |
 
 
 ##  Core API Endpoints
@@ -57,20 +69,44 @@ A minimal GitHub profile explorer centered around **my GitHub account** – show
 - Embedded `README.md` via **react-markdown**
 - Bookmark feature using Redux
 
+### Backend Features
 
+- **Optional GitHub OAuth Login**  
+  Allows users to authenticate using GitHub and unlock:
+  - Secure session management
+  - Personalized features tied to user accounts
+
+- **Persistent Personalization**
+  - Bookmark & star repositories across devices
+  - Save GitHub user comparisons for future access
+  - Store UI preferences (e.g., theme, sort order)
+
+- **Secure GitHub API Proxy**
+  - All GitHub requests routed through Express
+  - Enables token security, response caching, and request throttling
 
 ##  Future Enhancements
 
-###  User Comparison Mode
-- Compare `yehonatal` with another GitHub user
-- Side-by-side views of repo stats, contributions, stars
+- User Comparison Mode
+  - Compare `my account for example` with another GitHub user
+  - Side-by-side views of repo stats, contributions, stars
 
-###  Shareable Repo & Stats Cards
-- Visual summary cards for repos/user stats
-- Export/share to social platforms (image or link)
+- Shareable Repo & Stats Cards
+  - Visual summary cards for repos/user stats
+  - Export/share to social platforms (image or link)
 
-###  Deep Linking for Repositories
-- Navigate directly to `/repo/:repoName`
-- Supports route-based or modal-based views
+- Deep Linking for Repositories
+  - Navigate directly to `/repo/:repoName`
+  - Supports route-based or modal-based views
 
 
+## Fun Bonus Hidden Features 
+- Type :godmode in the search bar to enable dev-only stats:
+  - API response time
+  - Number of requests made
+  - Rate limit countdown
+- Random repo of the day
+- Customizable themes 
+  - “Pro Hacker (Dark)”
+  - “Retro Terminal”
+  - “Minion Mode” (fun yellow + emoji overload)
